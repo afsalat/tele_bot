@@ -13,7 +13,8 @@ def set_webhook():
     if response.status_code == 200:
         print('Webhook set successfully.')
     else:
-        print('Failed to set webhook:', response.text)
+      print('Failed to set webhook:', response.text)
 
-if __name__ == '__main__':
+if __name__   == '__main__':
     set_webhook()
+# https://api.telegram.org/bot{Config.TOKEN}/setWebhook

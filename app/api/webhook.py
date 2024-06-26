@@ -2,8 +2,8 @@ from flask import request
 from telegram import Update, Bot
 from telegram.ext import Dispatcher
 from config import Config
-from .handlers import setup_dispatcher
-from . import bp_handler
+from handlers import setup_dispatcher
+from app.api import api_bp
 
 
 def init_bot():
@@ -15,11 +15,10 @@ def init_bot():
 
 bot, dispatcher = init_bot()
 
-@bp_handler.route('/webhook', methods=['POST'])
+api_bp.route('/webhook', methods=['POST'])
 def webhook():
     """Set up the webhook to receive updates from Telegram."""
     print(request.json)
-    print("hiting.....")
     if request.method == "POST":
         update = Update.de_json(request.get_json(), bot)
         dispatcher.process_update(update)

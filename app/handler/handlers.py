@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 def start(update: Update, context):
     """Send a message when the command /start is issued."""
-    print("ttttttttt")
+    print("inside start")
     update.message.reply_text('Hi!')
 
 def help_command(update: Update, context):
