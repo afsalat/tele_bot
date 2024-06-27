@@ -24,3 +24,8 @@ def webhook():
         update = Update.de_json(request.get_json(), bot)
         dispatcher.process_update(update)
     return 'ok'
+    
+@bp_handler.route('/webhooklog', methods=['GET'])
+def webhookdone():
+    print("success...")
+    return 'done....'
