@@ -26,6 +26,15 @@ def webhook():
     return 'ok'
     
 @bp_handler.route('/webhooklog', methods=['GET'])
-def webhookdone():
-    print("success...")
-    return 'done....'
+def webhookz():
+    # print("inside webhooklog")
+   
+    file_name = 'example.txt'
+    with open(file_name, 'w') as file:
+        # Write some content to the file
+        file.write('Hello, this is a sample text file.\n')
+
+    print(f'File "{file_name}" created and written successfully.')
+
+    
+    return 'done'
