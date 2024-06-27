@@ -27,9 +27,9 @@ def webhook():
         dispatcher.process_update(update)
     return 'ok'
 
-@api_bp.route('/webhooklog', methods=['GET'])
-def webhooklog():
-    print("inside webhooklog")
+@api_bp.route('/webhookz', methods=['GET'])
+def webhookz():
+    # print("inside webhooklog")
    
     file_name = 'example.txt'
     with open(file_name, 'w') as file:
