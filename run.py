@@ -4,6 +4,4 @@ app = create_app()
 
 if __name__ == '__main__':
     set_webhook.set_webhook()
-    app.run(port=8443,debug=True)
-
-
+    app.run(debug=True)

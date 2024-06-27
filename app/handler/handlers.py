@@ -25,6 +25,7 @@ def error(update: Update, context):
 
 def setup_dispatcher(dispatcher: dispatcher):
     """Add handlers to the dispatcher."""
+    print('setup_dispatcher')
     dispatcher.add_handler(CommandHandler("start", start))
     dispatcher.add_handler(CommandHandler("help", help_command))
     dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, echo))

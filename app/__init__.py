@@ -13,6 +13,6 @@ def create_app():
         from .handler import bp_handler
         from .api import api_bp
         app.register_blueprint(bp_handler)
-        app.register_blueprint(api_bp, url_prefix='/api')
+        app.register_blueprint(api_bp)
 
     return app

@@ -7,8 +7,10 @@ from config import Config
 
 def set_webhook():
     print("----- ",Config.TOKEN)
-    url = f'https://api.telegram.org/bot{Config.TOKEN}/setWebhook'
+    # https://api.telegram.org/bot7210202333:AAGE7PrVf0MjGV_MHtMakknvUauJL3Ua-wU/setWebhook?url=https://148.113.174.212:80/webhook
+    url = f'https://api.telegram.org/bot{Config.TOKEN}/setWebhook?url={Config.WEBHOOK_URL}'
     data = {'url': Config.WEBHOOK_URL}
+    print(data,'data')
     response = requests.post(url, data=data)
     if response.status_code == 200:
         print('Webhook set successfully.')
